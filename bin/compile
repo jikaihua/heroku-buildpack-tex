@@ -80,6 +80,19 @@ if [ -f "$BUILD_DIR/texlive.packages" ]; then
     tlmgr install $(cat "$BUILD_DIR/texlive.packages")
 fi
 
+build-step "Installing custom packages (compile file)..."
+tlmgr install cm-super
+tlmgr install type1cm
+tlmgr install siunitx
+tlmgr install libgreek
+tlmgr install libertine
+tlmgr install sansmath
+tlmgr install physics
+tlmgr install braket
+tlmgr install mhchem
+
+tlmgr install dvipng
+
 build-step "Updating installed packages..."
 tlmgr update --all
 
